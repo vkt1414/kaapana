@@ -46,8 +46,6 @@ dependencies:
   #   version: 0.0.0
   - name: debug-container-chart
     version: 0.0.0
-<<<<<<< HEAD
-<<<<<<< HEAD
   # - name: openedc-chart
   #   version: 0.0.0
   # - name: hello-backend-chart
@@ -64,16 +62,10 @@ dependencies:
   #   version: 0.0.0
   # - name: podman-chart # lives here before build script can handle the code-server as dependency
   #   version: 0.0.0
-=======
-=======
->>>>>>> some additional changes
   - name: kaapana-persistence-chart
     version: 0.0.0
-=======
->>>>>>> some additional changes
   - name: m2olie-workbench-chart
     version: 0.0.0
   - name: m2olie-backend-chart
     version: 0.0.0
-  
->>>>>>> fixed updates, to the current develop version
+
