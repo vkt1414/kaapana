@@ -62,10 +62,9 @@ dependencies:
   #   version: 0.0.0
   # - name: podman-chart # lives here before build script can handle the code-server as dependency
   #   version: 0.0.0
-  - name: kaapana-persistence-chart
-    version: 0.0.0
   - name: m2olie-workbench-chart
     version: 0.0.0
   - name: m2olie-backend-chart
     version: 0.0.0
-
+  - name: m2olie-workflow
+    version: 0.0.0
