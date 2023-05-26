@@ -21,6 +21,7 @@ class DcmConverterOperator(KaapanaBaseOperator):
         output_format="nrrd",
         parallel_processes=3,
         env_vars=None,
+        name="dcm-converter",
         execution_timeout=timedelta(hours=10),
         **kwargs,
     ):
@@ -49,7 +50,7 @@ class DcmConverterOperator(KaapanaBaseOperator):
         super().__init__(
             dag=dag,
             image=f"{DEFAULT_REGISTRY}/mitk-fileconverter:{KAAPANA_BUILD_VERSION}",
-            name="dcm-converter",
+            name=name,
             env_vars=env_vars,
             image_pull_secrets=["registry-secret"],
             execution_timeout=execution_timeout,
