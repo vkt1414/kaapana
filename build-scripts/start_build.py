@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 from shutil import copyfile, rmtree
-import yaml
-import os
 import logging
+import os
 from os.path import join, dirname, exists
 from time import time
 from argparse import ArgumentParser
+import yaml
 from build_helper.charts_helper import HelmChart, init_helm_charts, helm_registry_login
 from build_helper.container_helper import Container, container_registry_login
 from build_helper.build_utils import BuildUtils
@@ -206,8 +206,7 @@ if __name__ == "__main__":
     )
 
     parser.add_argument(
-        "-cevdatabase,"
-        "--vulnerability-database",
+        "-cevdatabase," "--vulnerability-database",
         dest="check_expired_vulnerabilities_database",
         default=False,
         action="store_true",
@@ -284,8 +283,8 @@ if __name__ == "__main__":
     if not os.path.isfile(config_filepath):
         logger.error("")
         logger.error("")
-        logger.error(f"The build-configuration.yaml was not found!")
-        logger.error(f"Default config has been created -> please adjust as needed !!")
+        logger.error("The build-configuration.yaml was not found!")
+        logger.error("Default config has been created -> please adjust as needed !!")
         logger.error("")
         logger.error(f"See: {config_filepath}")
         copyfile(src=template_config_filepath, dst=config_filepath)
@@ -442,7 +441,6 @@ if __name__ == "__main__":
     registry_pwd = (
         args.password if args.password is not None else conf_registry_password
     )
-
     build_only = args.build_only if args.build_only != None else conf_build_only
     create_offline_installation = (
         args.create_offline_installation
@@ -660,8 +658,9 @@ if __name__ == "__main__":
     BuildUtils.version_latest = version_latest
     BuildUtils.enable_image_stats = enable_image_stats
     BuildUtils.create_sboms = create_sboms
-    BuildUtils.check_expired_vulnerabilities_database = conf_check_expired_vulnerabilities_database
-    
+    BuildUtils.check_expired_vulnerabilities_database = (
+        conf_check_expired_vulnerabilities_database
+    )
 
     if (
         BuildUtils.vulnerability_scan
